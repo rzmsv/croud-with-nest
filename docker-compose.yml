@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+
+  dev-db:
+    image: postgres:13
+    restart: always # options are [always | no | unless-stopped | on-failure[:max-retries] ] 
+    container_name: postgres
+    networks:
+      - freecodecamp
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    ports:
+      - 5434:5432
+networks:
+  freecodecamp:
