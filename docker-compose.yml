@@ -13,5 +13,17 @@ services:
       POSTGRES_DB: nest
     ports:
       - 5434:5432
+
+  test-db:
+    image: postgres:13
+    container_name: test-postgres
+    networks:
+      - freecodecamp
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    ports:
+      - 5435:5432
 networks:
   freecodecamp:
